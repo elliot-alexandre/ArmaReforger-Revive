@@ -1,0 +1,20 @@
+GameProject {
+ ID "ReviveFriendlyPlayer"
+ GUID "59DE09B4321BAC8E"
+ TITLE "Revive Friendly Player"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+ Configurations {
+  GameProjectConfig PC {
+  }
+  GameProjectConfig XBOX_ONE {
+  }
+  GameProjectConfig XBOX_SERIES {
+  }
+  GameProjectConfig PS4 {
+  }
+  GameProjectConfig HEADLESS {
+  }
+ }
+}

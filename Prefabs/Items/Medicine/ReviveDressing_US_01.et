@@ -1,0 +1,55 @@
+GenericEntity : "{0845FCD5D1E53541}Prefabs/Items/Core/FieldDressing_Base.et" {
+ ID "51F66EC33748B84D"
+ components {
+  SoundComponent "{59AF2B2B81BD595C}" {
+   Filenames {
+    "{02B22546DD1483B8}Sounds/Items/_SharedData/PickUp/Items_PickUp_FieldDressing_US.acp"
+   }
+   OnFrameUpdate 0
+  }
+  InventoryItemComponent "{5222EB4D0C73006B}" {
+   Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
+    ItemDisplayName UIInfo "{5222EB4D07D865FA}" {
+     Name "Revive Kit"
+     Description "Should only be use by a professional Medical Expert in battle buddy saving. Don't forget to use it with a little bit of love, it never hurt ;)"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 0.25
+     SizeSetupStrategy Volume
+     ItemVolume 100
+    }
+    CustomAttributes {
+     ItemActionAnimAttributes "{551CA1C31648EE8D}" {
+      ActionFloatParam 24
+     }
+     SCR_ItemOfInterestAttribute "{554E95CAC60BB241}" {
+      m_InterestType REVIVE
+     }
+     PreviewRenderAttributes "{59AF2B2B81BD59A8}" {
+      CameraPreset Top
+      CameraOrbitAngles 0 0 0
+      CameraDistanceToItem 0.5
+      CameraOffset 0 -0.02 0.01
+      ItemRenderRotation 90 0 0
+      FOV 10
+     }
+     SCR_AlternativeModel "{59AF2B2B81BD59AD}" {
+      m_sAlternativeModel "{9EF00D573FC5604A}Assets/Items/Medicine/Gauze_01/Gauze_01_packed.xob"
+     }
+    }
+    CommonItemType "REVIVE"
+   }
+  }
+  MeshObject "{51F66EC3C5BC700D}" {
+   Object "{4B7F315DD3774443}Assets/Items/Medicine/FieldDressing_US_01/FieldDressing_US_01.xob"
+   LODScale 1
+  }
+  Hierarchy "{59AF2B2B81BD59AF}" {
+  }
+  SCR_ConsumableItemComponent "{5943631460899505}" {
+   m_ConsumableEffect SCR_ConsumableRevive "{594363147CC4C6BE}" {
+   }
+  }
+ }
+ scale 2
+}

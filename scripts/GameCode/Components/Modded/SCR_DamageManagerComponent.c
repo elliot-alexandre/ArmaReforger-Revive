@@ -22,21 +22,19 @@ modded class SCR_DamageManagerComponent: DamageManagerComponent
 		if (!hitZone)
 			return;
 		
-		hitZone.SetHealth(5);
-		
 		vector hitPosDirNorm[3];
 		
 		PlayerManager new_PlayerManager = GetGame().GetPlayerManager();	
 		
 		SCR_CharacterDamageManagerComponent dmg = SCR_CharacterDamageManagerComponent.Cast(GetOwner().FindComponent(SCR_CharacterDamageManagerComponent));
 	
-		if(dmg.isRevivable == true){
+		if(dmg.isRevivable == true && new_PlayerManager.GetPlayerIdFromControlledEntity(owner) != 0){
 			HandleDamage(EDamageType.TRUE, hitZone.GetMaxHealth(), hitPosDirNorm, owner, hitZone, instigator, null, -1, -1);
 		}
 		
 		if(dmg.isRevivable == false && new_PlayerManager.GetPlayerIdFromControlledEntity(owner) != 0){
 			dmg.AddDeath();
-			OnDamageStateChanged(EDamageState.STATE3);
+			OnDamageStateChanged(EDamageState.DESTROYED);
 			GetGame().GetCallqueue().CallLater(BleedingOut, 30000, false, instigator);
 		} 
 		

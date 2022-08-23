@@ -83,6 +83,7 @@ modded class SCR_CharacterDamageManagerComponent : ScriptedDamageManagerComponen
             isRevivable = true;
 			IEntity newOwner = GetOwner();
 			UpdatePlayerController(false, newOwner);
+			OnDamageStateChanged(EDamageState.STATE1);
         }
 		
 	}
